@@ -24,7 +24,8 @@ public class GaleryController {
 
     @GetMapping
     public List<Image> getImagesUseFeignClient(@RequestParam(value = "size", defaultValue = "2") int size) {
-        return galeryService.getImageListUseFeignClient(size);
+//        return galeryService.getImageListUseFeignClient(size);
+        return galeryService.getImageListUseRestTemplate(size);
     }
 
     @PostMapping("/{id}")
