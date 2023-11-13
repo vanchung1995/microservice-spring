@@ -17,7 +17,7 @@
 	<modules>
 		<module>eureka-server</module>
 		<module>image-service</module>
-		<module>galery-service</module>
+		<module>gallery-service</module>
 		<module>config-server</module>
 		<module>gateway-service</module>
 	</modules>

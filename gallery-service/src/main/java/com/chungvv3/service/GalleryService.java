@@ -3,17 +3,16 @@ package com.chungvv3.service;
 import com.chungvv3.entities.Image;
 import com.chungvv3.service.subservice.FeignImageService;
 import com.chungvv3.service.subservice.RestTemplateImageService;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class GaleryService {
+public class GalleryService {
     private final FeignImageService feignImageService;
     private final RestTemplateImageService restTemplateImageService;
 
-    public GaleryService(FeignImageService feignImageService, RestTemplateImageService restTemplateImageService) {
+    public GalleryService(FeignImageService feignImageService, RestTemplateImageService restTemplateImageService) {
         this.feignImageService = feignImageService;
         this.restTemplateImageService = restTemplateImageService;
     }

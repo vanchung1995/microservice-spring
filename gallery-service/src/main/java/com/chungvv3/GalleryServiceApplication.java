@@ -8,8 +8,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableFeignClients
 @EnableEurekaClient
-public class GaleryServiceApplication {
+public class GalleryServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(GaleryServiceApplication.class, args);
+        SpringApplication.run(GalleryServiceApplication.class, args);
     }
 }

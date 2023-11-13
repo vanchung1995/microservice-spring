@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>galery-service</artifactId>
+    <artifactId>gallery-service</artifactId>
 
     <dependencies>
         <dependency>
