@@ -13,10 +13,12 @@ public class RestTemplateImageService {
     private static final String IMAGE_PATH = "/images/api/v1";
     private static final String IMAGE_SERVICE = "image-service";
     private final DiscoveryClient discoveryClient;
+    private final RestTemplate restTemplateBalanced;
     private final RestTemplate restTemplate;
 
-    public RestTemplateImageService(DiscoveryClient discoveryClient) {
+    public RestTemplateImageService(DiscoveryClient discoveryClient, RestTemplate restTemplateBalanced) {
         this.discoveryClient = discoveryClient;
+        this.restTemplateBalanced = restTemplateBalanced;
         this.restTemplate = new RestTemplate();
     }
 
@@ -29,6 +31,13 @@ public class RestTemplateImageService {
         String imageUrl = getImageUrl();
         String endPoint = imageUrl + IMAGE_PATH;
         List<Image> imageList = restTemplate
+                .getForObject(endPoint, List.class);
+        return imageList;
+    }
+
+    public List<Image> getListImageLoadBalancer(int size) {
+        String endPoint = "http://" + IMAGE_SERVICE +"/" + IMAGE_PATH;
+        List<Image> imageList = restTemplateBalanced
                 .getForObject(endPoint, List.class);
         return imageList;
     }

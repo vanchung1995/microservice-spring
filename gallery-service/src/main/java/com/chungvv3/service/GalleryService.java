@@ -22,7 +22,7 @@ public class GalleryService {
     }
 
     public List<Image> getImageListUseRestTemplate(int size) {
-        return restTemplateImageService.getListImage(size);
+        return restTemplateImageService.getListImageLoadBalancer(size);
     }
 
     public Image getImageUseFeignClient(int imageId) {
