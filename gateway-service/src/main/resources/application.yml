@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    discovery:
+      locator:
+        enabled: true
+    gateway:
+      routes:
+        - id: image-service
+          uri: lb://image-service
+          predicates:
+            - Path=/imagess/**
+          filters:
+            - StripPrefix=1
