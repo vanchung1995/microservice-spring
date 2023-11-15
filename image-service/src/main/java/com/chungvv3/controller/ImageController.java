@@ -1,6 +1,7 @@
 package com.chungvv3.controller;
 
 import com.chungvv3.entities.Image;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -36,5 +37,14 @@ public class ImageController {
         image.setTitle(image.getTitle() + "_" + pathId +"_" + pr1 + "_" + pr2);
         images.add(image);
         return image;
+    }
+
+    @Value("${a: default_a}")
+    private String a;
+
+    @GetMapping("/config")
+    public String getConfig(@RequestParam("key") String key) {
+        if (key.equals("a")) return a;
+        return null;
     }
 }

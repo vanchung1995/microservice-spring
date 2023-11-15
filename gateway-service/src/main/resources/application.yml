@@ -8,6 +8,6 @@ spring:
         - id: image-service
           uri: lb://image-service
           predicates:
-            - Path=/imagess/**
-          filters:
-            - StripPrefix=1
+            - Path=/images/**
+#          filters:
+#            - StripPrefix=1
