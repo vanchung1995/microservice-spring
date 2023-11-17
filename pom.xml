@@ -20,7 +20,8 @@
 		<module>gallery-service</module>
 		<module>config-server</module>
 		<module>gateway-service</module>
-	</modules>
+        <module>redis-service</module>
+    </modules>
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>2021.0.8</spring-cloud.version>
