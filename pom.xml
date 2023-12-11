@@ -21,6 +21,7 @@
 		<module>config-server</module>
 		<module>gateway-service</module>
         <module>redis-service</module>
+        <module>restful-api</module>
     </modules>
 	<properties>
 		<java.version>1.8</java.version>
